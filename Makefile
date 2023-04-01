@@ -1,6 +1,6 @@
 GO=go
 
-all: linode.sh aws-debian.sh
+all: linode.sh aws-debian.sh aws-ubuntu.sh
 
 bin/gen: gen/template.go gen/main.go
 	mkdir -p bin && \
@@ -19,6 +19,14 @@ aws-debian.sh: bin/gen
 	./bin/gen \
 		--remove-user admin \
 		--authorized-keys-path=/home/admin/.ssh/authorized_keys \
+		--wireguard-output stdout \
+		--nat \
+		>$@
+
+aws-ubuntu.sh: bin/gen
+	./bin/gen \
+		--remove-user ubuntu \
+		--authorized-keys-path=/home/ubuntu/.ssh/authorized_keys \
 		--wireguard-output stdout \
 		--nat \
 		>$@
