@@ -56,7 +56,7 @@ systemctl restart ssh
 # Get a random port number for WireGuard to listen on.
 # WireGuard would generate it's own random port every time it starts, but this
 # way is consistent.
-WG_PORT=$((($SRANDOM % 55536)+10000))
+WG_PORT=$((($SRANDOM % 55535)+10000))
 
 # Generate WireGuard key pair
 mkdir -p /etc/wireguard
