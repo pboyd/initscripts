@@ -15,6 +15,8 @@ These scripts will:
 
 Currently there are published scripts for AWS and Linode.
 
+This automates the steps from [this guide](https://pboyd.io/posts/securing-a-linux-vm/).
+
 ### Linode
 
 The Linode script can be imported as a StackScript (or use [this
